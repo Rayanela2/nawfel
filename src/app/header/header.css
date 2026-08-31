@@ -90,3 +90,41 @@
   background-color: white;
   transition: width 0.3s ease;
 }
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .header-content h1 {
+    font-size: 18px;
+  }
+
+  .header-logo {
+    width: 60px;
+  }
+
+  .steps-container {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 12px;
+    justify-content: center;
+  }
+
+  .step-button {
+    padding: 8px 12px;
+    font-size: 12px;
+    flex: 1;
+    min-width: 80px;
+    justify-content: center;
+  }
+
+  .step-name {
+    font-size: 11px;
+  }
+
+  .step-icon {
+    font-size: 14px;
+  }
+}
