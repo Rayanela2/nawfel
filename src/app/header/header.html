@@ -1,0 +1,28 @@
+<header class="header-container">
+  <div class="header-content">
+    <img
+      class="header-logo"
+      src="/nf-logo.png?v=2"
+      alt="Logo NJ">
+    <h1>Spécialiste Photovoltaïques</h1>
+  </div>
+  
+  <nav class="steps-nav">
+    <div class="steps-container">
+      <a
+        *ngFor="let step of steps" 
+        [routerLink]="step.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: step.route === '/' }"
+        (click)="selectStep(step.id)"
+        class="step-button">
+        <span class="step-icon">{{ step.icon }}</span>
+        <span class="step-name">{{ step.name }}</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="progress-bar">
+    <div class="progress-fill" [style.width]="((currentStep + 1) / steps.length * 100) + '%'"></div>
+  </div>
+</header>

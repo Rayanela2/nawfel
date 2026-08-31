@@ -1,0 +1,54 @@
+<div class="container mt-5 p-4 border rounded bg-light">
+  <div class="devis-header">
+    <div class="company-info">
+      <h2>{{ entreprise.nom }}</h2>
+      <p>{{ entreprise.adresse }}</p>
+      <p>Tél: {{ entreprise.tel }} </p>
+    </div>
+    <div class="devis-meta">
+      <span class="status-badge" [class]="'status-' + statut">{{ statut | uppercase }}</span>
+      <h3>DEVIS</h3>
+      <p class="text-muted">{{ devisRef }}</p>
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <div class="row mb-4">
+    <div class="col-6">
+      <h5>Client</h5>
+      <p><strong>{{ client.nom }}</strong></p>
+      <p>{{ client.adresse }}</p>
+      <p>{{ client.tel }}</p>
+      <p>{{ client.email }}</p>
+    </div>
+    <div class="col-6 text-end">
+      <p><strong>Date d'émission :</strong> {{ date }}</p>
+    </div>
+  </div>
+
+  <section class="etapes-section">
+    <h5>Étapes validées par le client</h5>
+    <ul class="etapes-list">
+      <li *ngFor="let etape of etapesProjet">
+        <span aria-hidden="true">✓</span>
+        {{ etape }}
+      </li>
+    </ul>
+  </section>
+
+  <div class="row footer-section">
+    <div class="col-6">
+      <h5>Prochaines actions</h5>
+      <ul class="conditions-list">
+        <li *ngFor="let condition of conditionsPaiement">{{ condition }}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="actions-bar">
+    <button class="btn btn-secondary" (click)="exportPDF()">📄 Exporter PDF</button>
+    <button class="btn btn-primary" (click)="envoyerParMail()">✉️ Envoyer par mail</button>
+  </div>
+</div>

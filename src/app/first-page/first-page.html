@@ -1,0 +1,103 @@
+<div class="first-page-container">
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content hero-grid">
+      <div class="hero-main">
+        <span class="trust-pill">{{ trustPill }}</span>
+        <h1 class="main-title">{{ mainTitle }}</h1>
+        <p class="subtitle">{{ subtitle }}</p>
+      </div>
+      <div class="hero-panel">
+        <h3>Pourquoi NJ Solaire ?</h3>
+        <div class="why-list">
+          <article *ngFor="let item of whyItems" class="why-item" [class.open]="activeWhyItemId === item.id">
+            <button type="button" class="why-question" (click)="toggleWhyItem(item.id)">
+              <span>{{ item.question }}</span>
+              <span class="why-icon">{{ activeWhyItemId === item.id ? '−' : '+' }}</span>
+            </button>
+            <p *ngIf="activeWhyItemId === item.id" class="why-answer">{{ item.answer }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans-section">
+    <div class="plans-container">
+      <h2 class="section-title">Formules d'entretien</h2>
+      <p class="section-subtitle">Choisissez la formule qui correspond le mieux à vos besoins.</p>
+
+      <div class="plans-grid">
+        <div class="plan-card plan-essentiel">
+          <h3>Essentiels</h3>
+          <ul>
+            <li>1 nettoyage / an</li>
+            <li>Maintien du rendement</li>
+          </ul>
+        </div>
+
+        <div class="plan-card plan-performance">
+          <h3>Performance</h3>
+          <ul>
+            <li>2 nettoyages / an</li>
+            <li>Contrôle visuel de l'installation</li>
+            <li>Entretien régulier</li>
+          </ul>
+        </div>
+
+        <div class="plan-card plan-premium">
+          <h3>Premium</h3>
+          <ul>
+            <li>2 nettoyages / an</li>
+            <li>Contrôle visuel complet</li>
+            <li>Inspection préventive complète</li>
+            <li>Fixation, anduleur et defauts</li>
+            <li>Rapport photo avant et après</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="services-container">
+      <h2 class="section-title">Nos engagements garde les trois </h2>
+      <p class="section-subtitle">Un accompagnement complet pour garantir la performance de vos panneaux sur le long terme.</p>
+      <div class="services-grid">
+        <div *ngFor="let service of services" class="service-card">
+          <div class="service-icon">{{ service.icon }}</div>
+          <div class="service-content">
+            <div class="checkmark">✔</div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guarantees-section">
+    <div class="guarantees-container">
+      <h2 class="section-title">Ce que vous obtenez à chaque intervention</h2>
+      <ul class="guarantees-list">
+        <li *ngFor="let guarantee of guarantees">
+          <span aria-hidden="true">✓</span>
+          {{ guarantee }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="cta-section">
+    <div class="cta-card">
+      <h3>Votre plan est prêt ?</h3>
+      <p>Finalisez maintenant et retrouvez toutes les étapes sélectionnées dans votre devis.</p>
+      <div class="cta-actions">
+        <button class="cta-button" type="button" (click)="allerAuDevis()">{{ ctaLabel }}</button>
+        <button class="contact-button" type="button" (click)="callNumber()" aria-label="Appeler 06 09 52 61 09">Contactez‑moi </button>
+      </div>
+      <p class="cta-subtext">{{ ctaSubtext }}</p>
+    </div>
+  </section>
+</div>

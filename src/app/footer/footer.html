@@ -1,0 +1,35 @@
+<footer class="footer-container">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <section class="footer-section">
+        <h3>NF</h3>
+        <p>
+          Solution de gestion pour le suivi des installations solaires,
+          des entretiens et des devis clients.
+        </p>
+      </section>
+
+      <section class="footer-section">
+        <h3>Navigation</h3>
+        <nav class="footer-nav">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Panneaux Solaires</a>
+          <a routerLink="/entretiens" routerLinkActive="active">Entretiens</a>
+          <a routerLink="/devis" routerLinkActive="active">Devis</a>
+        </nav>
+      </section>
+
+      <section class="footer-section">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>Email : njfuturpro@gmail.com</li>
+          <li>Tél : 06 09 52 61 09</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {{ currentYear }} NF - Gestion Panneaux Solaires. Tous droits réservés.</p>
+      <p>Mentions légales • Politique de confidentialité</p>
+    </div>
+  </div>
+</footer>
