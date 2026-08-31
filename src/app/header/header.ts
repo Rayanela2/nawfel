@@ -12,7 +12,7 @@ export class Header {
   currentStep: number = 0;
   
   steps = [
-    { id: 1, name: 'Panneaux Solaires', icon: '☀️', route: '/' },
+    { id: 1, name: 'Page D\'accueil', icon: '☀️', route: '/' },
     { id: 2, name: 'Devis', icon: '🔧', route: '/entretiens' },
     { id: 3, name: 'Creation Devis', icon: '📋', route: '/devis' },
   ];

@@ -4,7 +4,10 @@
     <h1>{{ dynamicHeaderTitle }}</h1>
     <p class="subtitle">Préparez et envoyez un compte rendu clair en quelques clics.</p>
     <div class="header-visual">
-      <img [src]="headerGifUrl" alt="Panneaux solaires en mouvement">
+    <img
+      class="header-logo"
+      src="/header-logo.png?v=2"
+      alt="Logo NJ">
       <div class="header-visual-text">
         <strong><span class="mini-sun">☀️</span> Suivi intelligent</strong>
         <span>Inspection & maintenance solaire</span>
@@ -138,34 +141,15 @@
             <textarea [(ngModel)]="besoinMessage" placeholder="Décrivez rapidement votre besoin..."></textarea>
           </div>
         </div>
+      
+      </div>
 
-        <div class="input-field">
-          <label>Numéro de téléphone</label>
-          <input type="tel" placeholder="06 12 34 56 78" [(ngModel)]="telephone">
-        </div>
-        <div class="input-field">
-          <label>Type de toiture</label>
-          <select [(ngModel)]="toitureType">
-            <option *ngFor="let toitureType of toitureTypes">
-              {{ toitureType }}
-            </option>
-          </select>
-        </div>
-        <div class="input-field">
-          <label>Nombre de photovoltaïques</label>
-          <input type="number" min="0" [(ngModel)]="nombrePhotovoltaiques">
-        </div>
-        <div class="input-field">
-          <label>Nom de l'intervenant</label>
-          <input type="text" placeholder="Jean Dupont" [(ngModel)]="intervenant">
-        </div>
-        <div class="input-field">
-          <label>Type d'installation</label>
-          <select [(ngModel)]="installationType">
-            <option *ngFor="let installationType of installationTypes">
-              {{ installationType }}
-            </option>
-          </select>
+      <div class="card-actions">
+        <button class="btn btn-primary" (click)="saveInformationsGenerales()">Sauvegarder</button>
+        <button class="btn btn-success" (click)="saveAndGoToDevis()">Valider et aller au devis</button>
+        <button class="btn btn-accent" [disabled]="!canSend()" (click)="sendAndGoToDevis()">Envoyer et aller au devis</button>
+        <div class="validation-hint" *ngIf="!canSend()">
+          <small>Remplissez nom, téléphone et email valides pour activer l'envoi.</small>
         </div>
       </div>
 
@@ -190,19 +174,5 @@
 
       <p class="card-note">Sélectionnez les améliorations à recommander au client pour la prochaine visite.</p>
     </section>
-  </div>
-
-  <div class="actions">
-    <div class="mail-block">
-      <label>Adresse email du destinataire</label>
-      <input
-        class="mail-input"
-        type="email"
-        placeholder="boite@mail.com"
-        [(ngModel)]="destinationEmail">
-    </div>
-
-    <button class="btn btn-mail" type="button" (click)="sendEntretienEmail()">✉️ Envoyer par mail</button>
-    <button class="btn btn-secondary" type="button">Annuler</button>
   </div>
 </div>
