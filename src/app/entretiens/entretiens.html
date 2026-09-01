@@ -9,12 +9,8 @@
       src="/header-logo.png?v=2"
       alt="Logo NJ">
       <div class="header-visual-text">
-        <strong><span class="mini-sun">☀️</span> Suivi intelligent</strong>
         <span>Inspection & maintenance solaire</span>
       </div>
-    </div>
-    <div class="header-meta">
-      <span>Dossier : {{ dossierRef }}</span>
     </div>
   </header>
 
@@ -156,23 +152,5 @@
       <p class="card-note">Ces informations seront reprises automatiquement dans le compte rendu envoyé.</p>
     </section>
 
-
-    <section class="card">
-      <div class="card-header">
-        <span class="icon icon-yellow">⭐</span>
-        <h2>3. Satisfaction & optimisation</h2>
-      </div>
-
-      <p class="label-text">Note de satisfaction client</p>
-      <div class="stars">★★★★<span class="star-empty">★</span></div>
-
-      <div class="checkbox-group">
-        <label *ngFor="let suggestion of suggestions">
-          <input type="checkbox"> {{ suggestion }}
-        </label>
-      </div>
-
-      <p class="card-note">Sélectionnez les améliorations à recommander au client pour la prochaine visite.</p>
-    </section>
   </div>
 </div>

@@ -13,8 +13,8 @@ export class Header {
   
   steps = [
     { id: 1, name: 'Page D\'accueil', icon: '☀️', route: '/' },
-    { id: 2, name: 'Devis', icon: '🔧', route: '/entretiens' },
-    { id: 3, name: 'Creation Devis', icon: '📋', route: '/devis' },
+    { id: 2, name: 'Informations Personnelles', icon: '🔧', route: '/entretiens' },
+    { id: 3, name: 'Devis', icon: '📋', route: '/devis' },
   ];
 
   selectStep(stepId: number) {
